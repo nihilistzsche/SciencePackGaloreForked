@@ -1,0 +1,6 @@
+require("functions")
+require("constants")
+require("prototypes.item.item")
+require("prototypes.item-groups")
+require("prototypes.recipe.recipe")
+require("prototypes.technology.technology-base")
