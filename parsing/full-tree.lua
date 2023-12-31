@@ -295,7 +295,7 @@
             local prereqs = {craft_time = mining_time, multiplier = 1, nodes = {}}
             if (val.minable.fluid_amount or 0) > 0 then
                 table.insert(prereqs.nodes, {type = "resource-category", name = resource_category, coefficient = 1})
-                table.insert(prereqs.nodes, {type = "fluid", name = val.minable.required_fluid, coefficient = val.minable.fluid_amount})
+                table.insert(prereqs.nodes, {type = "fluid", name = val.minable.required_fluid, coefficient = tonumber(val.minable.fluid_amount)})
             else
                 table.insert(prereqs.nodes, {type = "mining-category", name = resource_category, coefficient = 1})
             end
@@ -443,7 +443,7 @@
             for _, ingredient in pairs(val_lnk.ingredients) do
                 local ingredient_name = SciencePackGalore.getFullItemName(ingredient)
                 if ingredient_name then
-                    table.insert(prereqs.nodes, {type = ingredient_name.type, name = ingredient_name.name, coefficient = ingredient_name.amount})
+                    table.insert(prereqs.nodes, {type = ingredient_name.type, name = ingredient_name.name, coefficient = tonumber(ingredient_name.amount)})
                 end
             end
 
@@ -782,7 +782,7 @@
 
     for key, val in pairs(data.raw['rocket-silo']) do
         if val.fixed_recipe and val.rocket_result_inventory_size then
-            table.insert(SciencePackGalore.prototype_prerequisites[last_id], {nodes = {{type = 'recipe', name = val.fixed_recipe, coefficient = val.rocket_parts_required}}, multiplier = val.rocket_result_inventory_size})
+            table.insert(SciencePackGalore.prototype_prerequisites[last_id], {nodes = {{type = 'recipe', name = val.fixed_recipe, coefficient = tonumber(val.rocket_parts_required)}}, multiplier = val.rocket_result_inventory_size})
         end
     end
 
