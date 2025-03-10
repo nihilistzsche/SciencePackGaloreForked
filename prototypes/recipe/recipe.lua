@@ -11,8 +11,9 @@ for i=1, total_packs do
 			enabled = false,
             ingredients = table.deepcopy(science_pack_ingredients[i]),
             energy_required = science_pack_yields[i] * pack_time / 1000,
-            result = SciencePackGalore.prefix("science-pack-" .. i),
-            result_count = science_pack_yields[i]
+            results = {
+                { type = "item", name = SciencePackGalore.prefix("science-pack-" .. i), amount = science_pack_yields[i] }
+            }
         }
     })
     

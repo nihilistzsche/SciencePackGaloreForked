@@ -56,6 +56,15 @@ end
 for i=1, total_packs do
     local key = SciencePackGalore.prefix("science-pack-" .. i .. "-tech")
     data.raw.technology[key].prerequisites = table.deepcopy(pack_prereqs[i])
+    local keys_to_remove = {}
+    for j, pr in pairs(data.raw.technology[key].prerequisites) do
+        if pr == key then
+            table.insert(keys_to_remove, j)
+        end
+    end
+    for _, keyIndex in pairs(keys_to_remove) do
+        table.remove(data.raw.technology[key].prerequisites, keyIndex)
+    end
     data.raw.technology[key].unit = table.deepcopy(data.raw.technology[pack_requirement_tech[i]].unit)
     if data.raw.technology[key].unit.count_formula then
         table.remove(data.raw.technology[key].unit, "count_formula")

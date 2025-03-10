@@ -440,7 +440,7 @@
             -- - its crafting category
             -- - any of the techs that unlock it (in addition)
 
-            for _, ingredient in pairs(val_lnk.ingredients) do
+            for _, ingredient in pairs(val_lnk.ingredients or {}) do
                 local ingredient_name = SciencePackGalore.getFullItemName(ingredient)
                 if ingredient_name then
                     table.insert(prereqs.nodes, {type = ingredient_name.type, name = ingredient_name.name, coefficient = tonumber(ingredient_name.amount)})

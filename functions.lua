@@ -1,7 +1,7 @@
 SciencePackGalore = {}
 
 function SciencePackGalore.prefix(name)
-    return 'sem:spg_' .. name
+    return 'sem-spg_' .. name
 end
 
 function SciencePackGalore.toFixedString(num)
@@ -35,6 +35,9 @@ function SciencePackGalore.techIsValid(tech)
         return false
     end
     if tech.hidden == true then
+        return false
+    end
+    if tech.research_trigger then
         return false
     end
     return true

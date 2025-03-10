@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 2023-03-09
+  Changes:
+    - Updated for Factorio 2.0 and Space Age.
+    - Red wire and green wire for science pack 10 replaced with copper cable and electronic 
+      circuit.
+    - Satellite for science pack 36 replaced with carbon and ice if Space Age is enabled.
+    - Science Pack 36 renamed "Space Resources Science Pack"
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2023-12-31
   Changes:

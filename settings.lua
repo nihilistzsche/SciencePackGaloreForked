@@ -2,13 +2,6 @@ require("functions")
 
 data:extend({
     {
-        type = "int-setting",
-        name = SciencePackGalore.prefix("seed"),
-        setting_type = "startup",
-        default_value = 42,
-        order = "a"
-    },
-    {
         type = "bool-setting",
         name = SciencePackGalore.prefix("randomize-craft-time"),
         setting_type = "startup",
